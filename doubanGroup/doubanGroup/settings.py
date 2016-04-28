@@ -19,6 +19,13 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 Safari/536.5'
 COOKIES_ENABLED = True
 
+ITEM_PIPELINES = ['doubanGroup.pipelines.MongoDBPipeline']
+MONGODB_SERVER = 'XXXXX'
+MONGODB_PORT = 27017
+MONGODB_DB = 'Scrapy'
+MONGODB_COLLECTION = 'DoubanGroup'
+MONGODB_USE = 'XXXXX'
+MONGODB_PASWD = 'XXXXX'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'doubanGroup (+http://www.yourdomain.com)'

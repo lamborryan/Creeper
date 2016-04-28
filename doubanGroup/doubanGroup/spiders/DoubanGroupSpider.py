@@ -8,11 +8,9 @@
 """
 import re
 
-import scrapy
-from scrapy.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import Selector
 from scrapy.spiders import  Rule, CrawlSpider
-from scrapy.contrib.linkextractors import LinkExtractor
+from scrapy.linkextractors import LinkExtractor
 from doubanGroup.items import DoubangroupItem
 
 
@@ -28,11 +26,16 @@ class DoubanGroupSpider(CrawlSpider):
         "http://www.douban.com/group/explore?tag=%E6%83%85%E6%84%9F",
         "http://www.douban.com/group/explore?tag=%E9%97%B2%E8%81%8A",
         "http://www.douban.com/group/explore?tag=%E5%85%B4%E8%B6%A3"
+
     ]
 
     rules = [
         Rule(LinkExtractor(allow=('/group/[^/]+/$', )), callback='parse_group_home_page'),
         Rule(LinkExtractor(allow=('/group/explore\?tag')), follow=True),
+        Rule(LinkExtractor(allow=('/group/explore[?]start=.*?[&]tag=.*?$'),
+                           restrict_xpaths=('//span[@class="next"]')),
+                           callback='parse_next_page',
+                           follow=True)
     ]
 
     def __get_id_from_group_url(self, url):
@@ -45,6 +48,9 @@ class DoubanGroupSpider(CrawlSpider):
     def add_cookie(self, request):
         request.replace(cookies=[])
         return request
+
+    def parse_next_page(self, response):
+        self.log("Fetch next page: %s" % response.url)
 
     def parse_group_home_page(self, response):
         self.log("Fetch douban homepage page: %s" % response.url)
