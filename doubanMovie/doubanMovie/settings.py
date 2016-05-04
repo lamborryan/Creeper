@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for doubanGroup project
+# Scrapy settings for doubanMovie project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,10 +9,10 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'doubanGroup'
+BOT_NAME = 'doubanMovie'
 
-SPIDER_MODULES = ['doubanGroup.spiders']
-NEWSPIDER_MODULE = 'doubanGroup.spiders'
+SPIDER_MODULES = ['doubanMovie.spiders']
+NEWSPIDER_MODULE = 'doubanMovie.spiders'
 
 DOWNLOAD_DELAY = 2
 RANDOMIZE_DOWNLOAD_DELAY = True
@@ -23,12 +23,11 @@ ITEM_PIPELINES = ['doubanGroup.pipelines.MongoDBPipeline']
 MONGODB_SERVER = '42.96.204.155'
 MONGODB_PORT = 27017
 MONGODB_DB = 'Scrapy'
-MONGODB_COLLECTION = 'DoubanGroup'
+MONGODB_COLLECTION = 'DoubanMovie'
 MONGODB_USE = 'scrapy'
 MONGODB_PASWD = 'scrapyhello'
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'doubanGroup (+http://www.yourdomain.com)'
+#USER_AGENT = 'doubanMovie (+http://www.yourdomain.com)'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS=32
@@ -56,13 +55,13 @@ MONGODB_PASWD = 'scrapyhello'
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'doubanGroup.middlewares.MyCustomSpiderMiddleware': 543,
+#    'doubanMovie.middlewares.MyCustomSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'doubanGroup.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'doubanMovie.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -74,7 +73,7 @@ MONGODB_PASWD = 'scrapyhello'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'doubanGroup.pipelines.SomePipeline': 300,
+#    'doubanMovie.pipelines.SomePipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
