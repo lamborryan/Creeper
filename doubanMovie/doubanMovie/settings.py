@@ -19,11 +19,12 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 Safari/536.5'
 COOKIES_ENABLED = True
 
-ITEM_PIPELINES = ['doubanGroup.pipelines.MongoDBPipeline']
-MONGODB_SERVER = '42.96.204.155'
+ITEM_PIPELINES = ['doubanMovie.pipelines.MongoDBPipeline']
+MONGODB_SERVER = 'lambo'
 MONGODB_PORT = 27017
 MONGODB_DB = 'Scrapy'
-MONGODB_COLLECTION = 'DoubanMovie'
+MONGODB_MOVIE_DIM_COLLECTION = 'DoubanMovieDim'
+MONGODB_MOVIE_REVIEW_COLLECTION = 'DoubanMovieReview'
 MONGODB_USE = 'scrapy'
 MONGODB_PASWD = 'scrapyhello'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

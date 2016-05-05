@@ -9,7 +9,7 @@ import scrapy
 from scrapy import Field
 
 
-class DoubanmovieItem(scrapy.Item):
+class DoubanMovieItem(scrapy.Item):
 
     """moive dim"""
 
@@ -31,10 +31,7 @@ class DoubanmovieItem(scrapy.Item):
     # 类型
     movieType = Field()
 
-    # 国家
-    movieCountry = Field()
-
-    # 地区
+    # 国家/地区
     movieRegion = Field()
 
     # 语言
@@ -42,9 +39,6 @@ class DoubanmovieItem(scrapy.Item):
 
     # 上映时间
     movieShowTime = Field()
-
-    # 重映时间(可空)
-    movieUpdateShowTime = Field()
 
     # 片长
     movieTime = Field()
@@ -67,9 +61,11 @@ class DoubanmovieItem(scrapy.Item):
     # 影片tag
     movieTags = Field()
 
-class DoubanmovieCommentItem(scrapy.Item):
+class DoubanMovieReviewItem(scrapy.Item):
 
     """ movie comment fact"""
+    # 影评url
+    reviewUrl = Field()
 
     # 电影url
     movieUrl = Field()

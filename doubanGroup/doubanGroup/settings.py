@@ -20,7 +20,7 @@ USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (
 COOKIES_ENABLED = True
 
 ITEM_PIPELINES = ['doubanGroup.pipelines.MongoDBPipeline']
-MONGODB_SERVER = '42.96.204.155'
+MONGODB_SERVER = 'lambo'
 MONGODB_PORT = 27017
 MONGODB_DB = 'Scrapy'
 MONGODB_COLLECTION = 'DoubanGroup'
